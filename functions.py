@@ -12,6 +12,20 @@ def mul(x,y):
 def div(x,y):
     return x / y
 
+def doMath(x,y,z):
+    if z == '+':
+        print(x, z, y, "=", add(x,y))
+    elif z == '-':
+        print(x, z, y, "=", sub(x,y))
+    elif z == '*':
+        print(x, z, y, "=", mul(x,y))
+    elif z == '/':
+        print(x, z, y, "=", div(x,y))
+    else:
+        print("An error has occured")
+
+print("Successfully imported basic math functions.")
+
 if __name__ == '__main__':
     print("Running functions.py as main file. This is to test the use of the functions defined in this file.")
     x = int(input("Input a number: "))
