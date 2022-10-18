@@ -32,8 +32,8 @@ def takeInput(var):
                     return int(temp_var)
             else:
                 temp_var = input("Type in desired mathematical operator (+,-,*,/): ")
-                if temp_var == 'EXIT' or temp_var in operators:
-                    var = temp_var
+                if temp_var == 'EXIT' or temp_var.strip() in operators:
+                    var = temp_var.strip()
                     return var
                 else:
                     raise Exception("Invalid character, try again.")
