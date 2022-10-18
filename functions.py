@@ -12,7 +12,19 @@ def mul(x,y):
 def div(x,y):
     return x / y
 
+def takeInput(var):
+    if var == "first_number":
+        var = input("Type in first number value of equation: ")
+    elif var == "second_number":
+        var = input("Type in second number value of equation: ")
+    else:
+        var = input("Now type desired mathematical operator (+,-,*,/): ")
+    return var
+
 def doMath(x,y,z):
+    x = int(x)
+    y = int(y)
+
     if z == '+':
         print(x, z, y, "=", add(x,y))
     elif z == '-':

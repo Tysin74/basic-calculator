@@ -6,26 +6,26 @@ from functions import *
 
 print("Basic Calculator V1 loaded.")
 while True:
+    x = "first_number"
+    y = "second_number"
+    z = "operator"
 
     # First input taken
-    x = input("Type in first number value of equation: ")
+    x = takeInput(x)
     if x == 'EXIT':
         break
-    else:
-        x = int(x)
 
     # Second input taken
-    y = input("Type in second number value of equation: ")
+    y = takeInput(y)
     if y == 'EXIT':
         break
-    else:
-        y = int(y)
 
     # Third input taken
-    z = input("Now type desired mathematical operator (+,-,*,/): ")
+    z = takeInput(z)
     if z == 'EXIT':
         break
-    else:
-        doMath(x,y,z)
+    
+    # Compute answer
+    doMath(x,y,z)
 
 print("Program terminated.")
