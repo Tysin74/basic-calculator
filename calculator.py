@@ -4,7 +4,7 @@
 
 from functions import *
 
-print("Basic Calculator V1 loaded.")
+print("Basic Calculator V1 loaded, type 'EXIT' at any time to close application.")
 while True:
     x = "first_number"
     y = "second_number"

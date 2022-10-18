@@ -1,5 +1,7 @@
 # This file contains all mathematical functions used in calculator.py
 
+operators = ['+', '-', '*', '/']
+
 def add(x,y):
     return x + y
 
@@ -13,17 +15,32 @@ def div(x,y):
     return x / y
 
 def takeInput(var):
-    if var == "first_number":
-        var = input("Type in first number value of equation: ")
-    elif var == "second_number":
-        var = input("Type in second number value of equation: ")
-    else:
-        var = input("Now type desired mathematical operator (+,-,*,/): ")
-    return var
+    temp_var = "blank"
+    while True:
+        try:
+            if var == "first_number":
+                temp_var = input("Type in first number value of equation: ")
+                if temp_var == 'EXIT':
+                    return temp_var
+                elif int(temp_var):
+                    return int(temp_var)
+            elif var == "second_number":
+                temp_var = input("Type in second number value of equation: ")
+                if temp_var == 'EXIT':
+                    return temp_var
+                elif int(temp_var):
+                    return int(temp_var)
+            else:
+                temp_var = input("Type in desired mathematical operator (+,-,*,/): ")
+                if temp_var == 'EXIT' or temp_var in operators:
+                    var = temp_var
+                    return var
+                else:
+                    raise Exception("Invalid character, try again.")
+        except:
+                print("Invalid character, try again.")
 
 def doMath(x,y,z):
-    x = int(x)
-    y = int(y)
 
     if z == '+':
         print(x, z, y, "=", add(x,y))
